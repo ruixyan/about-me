@@ -11,12 +11,12 @@ let heading = document.querySelector(".heading");
 let originalHeadingText = heading.innerHTML;
 
 let newHeadings = [
-    "hometown: boston",
-    "favorite animal: cats",
-    "favorite movie: in the mood for love",
-    "favorite color scheme: black, white, red",
+    "hometown",
+    "favorite animal",
+    "favorite movie",
+    "favorite color scheme",
     "current playlist",
-    "two truths and a lie :)"
+    "currently experimenting with...",
 ];
 
 let updateGalleryItems = () => {

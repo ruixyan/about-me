@@ -40,14 +40,6 @@ canvas {
     pointer-events: auto; /* Ensure the canvas can receive mouse events */
 }
 
-.playlist {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2; 
-}
-
 .container {
     height: 100vh; /* Full height of the viewport */
     display: flex; /* Center content */
@@ -88,7 +80,7 @@ canvas {
     display: flex;
     flex-direction: column;
     background-color: #ffffff;
-    width: 80%;
+    width: 70%;
     max-width: 1200px;
     margin: 2em auto 0; /* Adds top margin to create space from the first container */
     padding: 1em 0.5em;

@@ -4,25 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playlist</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
-    <script src="script.js" defer></script>
     <style>
         body {
-            background-color: black;
+            background-color: #000000;
             color: white;
             font-family: "Basteleur-Moonlight", Times, serif;
             cursor: url('image-path.png'), auto;
             cursor: none;
         }
 
-    </style>
+        .playlist {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2; 
+        }
+
+        .back-button {
+            position: absolute;
+            z-index: 1;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+          }
+      </style>
 </head>
 <body>
     <a href="index.html">
 		<button class="back-button">back to <br>menu</button>
 	</a>	
-    <div class="cursor"></div>
     <div class="playlist">
         <iframe style="border-radius:12px" 
         src="https://open.spotify.com/embed/playlist/4Ms1lZSSbfvBEeCumKlw3i?utm_source=generator&theme=0" 

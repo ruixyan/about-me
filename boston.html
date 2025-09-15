@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <style>
+        @font-face {
+            font-family: "Basteleur-Moonlight";
+            src: url("/fonts/Basteleur-Moonlight.woff") format("woff");
+        }
+		.back-button {
+            position: absolute;
+            z-index: 1;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+	    }
+
+        .header {
+            position: absolute;
+            z-index: 1;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-family: "Basteleur-Moonlight", Times, serif;
+            color: white;
+            text-align: center;
+        }
+
+        .sub {
+            position: absolute;
+            z-index: 1;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-family: "Basteleur-Moonlight", Times, serif;
+            color: white;
+            text-align: center;
+        }
+	</style>
+  </head>
+  <body>
+    <a href="index.html">
+		<button class="back-button">back to <br>menu</button>
+	</a>	
+    <div class="header">
+        boston
+    </div>
+    <div class="sub">
+        <i>click and drag</i>
+    </div>
+    <a-scene>
+      <!-- Background image -->
+      <a-sky src="#background-image"></a-sky>
+
+      <!-- Assets -->
+      <a-assets>
+        <img id="background-image" src="/pics/boston_pano.jpg">
+      </a-assets>
+    </a-scene>
+  </body>
+</html>
