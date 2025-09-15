@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Color Scheme</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body, html {
+			width: 100%;
+			height: 100%;
+		}
+		#container {
+			display: flex;
+			width: 100vw;
+			height: 100vh;
+			overflow: hidden;
+		}
+		#container div {
+			flex-grow: 1;
+			transition: flex 0.5s ease, background-color 0.3s ease;
+			cursor: pointer;
+		}
+
+		.back-button {
+		position: absolute;
+		z-index: 1;
+		top: 20px;
+		left: 20px;
+		background-color: rgba(255, 255, 255, 0.8);
+		border: none;
+		padding: 10px;
+		border-radius: 5px;
+		cursor: pointer;
+		font-size: 16px;
+	}
+	</style>
+</head>
+<body>
+
+	<div id="container"></div>
+	<a href="index.html">
+		<button class="back-button">back to <br>menu</button>
+	</a>	
+
+	<script>
+		const container = document.querySelector("#container");
+
+		// Define a fixed color palette (feel free to change these)
+		const colorPalette = [
+			"#ffffff", // coral red
+			"#e0e0e0", // golden yellow
+			"#969696", // mint green
+			"#000000", // soft blue
+			"#d10f0f"  // purple
+		];
+
+		const startFlex = "0 1 400px";
+		const hoverFlex = "0 1 1000px";
+
+		function createDivs() {
+			container.innerHTML = "";
+
+			colorPalette.forEach((color, index) => {
+				const div = document.createElement("div");
+
+				div.style.backgroundColor = color;
+				div.style.flex = startFlex;
+
+				// Hover interaction
+				div.addEventListener("mouseenter", () => {
+					div.style.flex = hoverFlex;
+
+				});
+
+				div.addEventListener("mouseleave", () => {
+					div.style.flex = startFlex;
+					div.style.backgroundColor = color;
+				});
+
+				container.appendChild(div);
+			});
+		}
+
+		createDivs();
+	</script>
+</body>
+</html>

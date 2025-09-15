@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caffeine chronicles</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="container second">
+        <div class="heading">Rachel Yan:<i> ABOUT ME</i></div>
+        <div class="gallery_container">
+            <div class="indicator"></div>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <a href="boston.html">
+                        <img src = "pics/boston.jpg">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="favanimal.html">
+                        <img src = "pics/jiji.jpg">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="favmovie.html">
+                        <img src = "pics/movie.jpg">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="colorscheme.html">
+                        <img src = "pics/colors.png">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="playlist.html">
+                        <img src = "pngs/barnesnobles.png">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+                <div class="gallery-item">
+                    <a href="butterdose3D.html">
+                        <img src = "pngs/butterdose.png">
+                        <span class="hover-text">enter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- p5.js Script -->
+
+
+
+
+    <script>
+        let currentStrokeColor;
+
+        function setup() {
+            // Create the canvas
+            c = createCanvas(windowWidth, windowHeight*2); // Fullscreen canvas
+
+            c.elt.style.position = "fixed"
+            
+            // Set background to white
+            background(255);
+            
+            // Set width of the lines
+            strokeWeight(5);
+            
+            // Set initial stroke color to black
+            currentStrokeColor = color(0, 0, 0);
+            cursorColor = color(0, 0, 0);
+
+
+            document.addEventListener("mousemove", (e) => {
+                const cursor = document.querySelector(".cursor");
+                cursor.style.top = e.pageY + "px";
+                cursor.style.left = e.pageX + "px";
+                cursor.style.backgroundColor = cursorColor;  // Apply the updated color
+            });
+            
+            // Create buttons
+            let buttonSize = 25; // You can adjust this or make it responsive too
+            let y = windowHeight * 0.8; // 85% down the screen
+
+            createButton("")
+            .position(windowWidth * 0.4, y)
+            .style("width", buttonSize + "px")
+            .style("height", buttonSize + "px")
+            .mousePressed(clearCanvas);
+
+            createButton("")
+            .position(windowWidth * 0.45, y)
+            .style("background-color", "black")
+            .style("color", "white")
+            .style("width", buttonSize + "px")
+            .style("height", buttonSize + "px")
+            .mousePressed(() => changeColor(0, 0, 0));
+
+            createButton("")
+            .position(windowWidth * 0.5, y)
+            .style("background-color", "red")
+            .style("width", buttonSize + "px")
+            .style("height", buttonSize + "px")
+            .mousePressed(() => changeColor(255, 0, 0));
+
+            createButton("")
+            .position(windowWidth * 0.55, y)
+            .style("background-color", "green")
+            .style("color", "white")
+            .style("width", buttonSize + "px")
+            .style("height", buttonSize + "px")
+            .mousePressed(() => changeColor(0, 128, 1));
+
+            createButton("")
+            .position(windowWidth * 0.6, y)
+            .style("background-color", "blue")
+            .style("color", "white")
+            .style("width", buttonSize + "px")
+            .style("height", buttonSize + "px")
+            .mousePressed(() => changeColor(0, 0, 255));
+
+                    }
+
+        function draw() {
+            // Set stroke color for drawing
+            stroke(currentStrokeColor);
+        }
+
+        function mouseDragged() {
+            // Draw a line from the previous position to the current position
+            line(pmouseX, pmouseY, mouseX, mouseY);
+        }
+
+        function clearCanvas() {
+            background(255); // Clear the canvas by resetting the background
+        }
+
+        function changeColor(r, g, b) {
+            currentStrokeColor = color(r, g, b);// Change stroke color
+
+            // Check if the currentStrokeColor is blue (0, 0, 255)
+            if (r === 0 && g === 0 && b === 255) {
+                cursorChange(0, 0, 255); // Set cursor color to blue
+
+            }
+            
+            if (r === 0 && g === 128 && b === 1) {
+                cursorChange(0, 128, 1); // Set cursor color to green    
+
+            }
+
+            if (r === 255 && g === 0 && b === 0) {
+                cursorChange(255, 0, 0); // Set cursor color to red    
+
+            }
+
+            if (r === 0 && g === 0 && b === 0) {
+                cursorChange(0, 0, 0); // Set cursor color to red    
+
+            }
+        }
+
+        function cursorChange(r, g, b) {
+                cursorColor = color(r, g, b);
+        }
+
+        // Resize canvas when the window is resized
+        function windowResized() {
+            resizeCanvas(windowWidth, windowHeight);
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

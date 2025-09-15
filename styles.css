@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Basteleur-Moonlight";
+    src: url("/fonts/Basteleur-Moonlight.woff") format("woff");
+}
+
+
+
+body {
+    font-family: 'Basteleur-Moonlight', Times, serif;
+    cursor: url('image-path.png'), auto;
+    cursor: none;
+}
+
+.back-button {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.cursor {
+    width: 8px;
+    height: 8px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 100;
+    pointer-events: none;
+    transform: translate(-50%, -50%)
+  }
+
+canvas {
+    position: fixed;    /* Fix canvas position */
+    top: 0;
+    left: 0;
+    z-index: 0;        /* Ensure canvas is below content */
+    pointer-events: auto; /* Ensure the canvas can receive mouse events */
+}
+
+.playlist {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; 
+}
+
+.container {
+    height: 100vh; /* Full height of the viewport */
+    display: flex; /* Center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack elements vertically */
+    z-index: 2; 
+}
+
+.first {
+    color: rgb(0, 0, 0); /* Black text */
+    z-index: 2; 
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 90%;
+    text-align: center;
+    padding: 30px;
+    user-select: none;
+
+}
+
+.hero__heading {
+    font-size: 5rem;
+    margin-bottom: 12px;
+    margin-top: 100px;
+    color: #000000;
+    user-select: none;
+}
+
+.gallery_container {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 80%;
+    max-width: 1200px;
+    margin: 2em auto 0; /* Adds top margin to create space from the first container */
+    padding: 1em 0.5em;
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Position the heading on top of the gallery container */
+.heading {
+    position: absolute;  /* Absolute positioning relative to the container */
+    top: 100px; /* Adjust top value to move heading upwards above the gallery */
+    width: 100%; /* Make sure it stretches the full width of the gallery container */
+    padding: 10px 125px; /* Optional padding */
+    font-size: 2rem; /* Font size */
+    color: #000000; /* Text color */
+    font-weight: bold; /* Bold text for emphasis */
+    z-index: 10; /* Ensure it's above the gallery items */
+    text-align: center; /* Align text to the left */
+}
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0.5 100px;
+    height: 400px;
+    margin: 0 5px;
+    overflow: hidden;
+    position: relative;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.hover-text {
+    position: absolute; /* Position it over the image */
+    bottom: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    color: white; /* Text color */
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 5px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth fade-in/out */
+}
+
+.gallery-item:hover .hover-text {
+    opacity: 1; /* Show text on hover */
+}
+
+.gallery-item img {
+    width: 400px;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(2);
+}
+/* Style for p5.js buttons */
+button {
+    position: absolute; /* Position the buttons */
+    bottom: 10px; /* Place them at the bottom */
+    width: 25px; /* Fixed width */
+    height: 25px; /* Fixed height (to make them circular) */
+    border-radius: 50%; /* Make them round */
+    background-color: #bababa; /* White background */
+    border: 2px; /* Remove default border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* Make sure they're above the canvas */
+    opacity: 70;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition on hover */
+}
+
+/* Add hover effect */
+button:hover {
+    background-color: #ddd; /* Change background color on hover */
+    transform: scale(1.3); /* Slightly scale up when hovered */
+    opacity: 100;
+}
+
+
+/* Prevent selection for gallery items */
+.gallery-item,
+.gallery-item img,
+.hover-text,
+.heading {
+    user-select: none; /* Prevent text selection */
+}
+
+
+.back-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
