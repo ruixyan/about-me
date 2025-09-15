@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>in the mood for love</title>
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body, html {
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			font-family: "Basteleur-Moonlight", Times, serif;
+		}
+
+		.header {
+			position: absolute;
+			z-index: 1;
+			top: 5%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 3rem;
+			color: white;
+			text-align: center;
+		}
+
+		.sub {
+			position: absolute;
+			z-index: 1;
+			top: 10%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			font-size: 1rem;
+			color: white;
+			text-align: center;
+		}
+
+		.back-button {
+			position: absolute;
+			z-index: 1;
+			top: 20px;
+			left: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border: none;
+			padding: 10px;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+        .gif-grid {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .gif-grid img {
+            width: 50vw;
+            height: 50vh;
+            object-fit: cover;
+            display: block;
+            opacity: 0.25;
+            transition: opacity 0.3s ease;
+        }
+
+        .gif-grid img:hover {
+            opacity: 1;
+        }
+	</style>
+</head>
+<body>
+
+	<a href="index.html">
+		<button class="back-button">back to <br>menu</button>
+	</a>
+        <div class="header">In the Mood for Love</div>
+        <div class="sub"><i>dir. Wong Kar-wai, 2000</i></div>
+
+	<div class="gif-grid">
+		<img src="pics/staring.gif" alt="GIF 1">
+		<img src="pics/eating.gif" alt="GIF 2">
+        <img src="pics/cab.gif" alt="GIF 4">
+		<img src="pics/red.gif" alt="GIF 3">
+	</div>
+
+</body>
+</html>

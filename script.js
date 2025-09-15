@@ -12,9 +12,9 @@ let originalHeadingText = heading.innerHTML;
 
 let newHeadings = [
     "hometown",
-    "favorite animal",
     "favorite movie",
     "favorite color scheme",
+    "favorite animal",
     "current playlist",
     "currently experimenting with...",
 ];
