@@ -92,7 +92,7 @@ canvas {
 /* Position the heading on top of the gallery container */
 .heading {
     position: absolute;  /* Absolute positioning relative to the container */
-    top: 100px; /* Adjust top value to move heading upwards above the gallery */
+    top: 15%; /* Adjust top value to move heading upwards above the gallery */
     width: 100%; /* Make sure it stretches the full width of the gallery container */
     padding: 10px 125px; /* Optional padding */
     font-size: 2rem; /* Font size */
